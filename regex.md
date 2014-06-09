@@ -1,10 +1,9 @@
-
 # Regular Expressions
 
 
 ## Basic Syntax
 
-- `/.../`: Start and end regex delimiters |
+- `/.../`: Start and end regex delimiters
 - `|`: Alternation
 - `()`: Grouping
 

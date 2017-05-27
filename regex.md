@@ -210,7 +210,7 @@
    
    #### Explanation of some of the above regex:
    
-   Matching a password: `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,12}$`
+   `Matching a password: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,12}$`
    - `6 to 12 characters in length`  
    `Must have at least one uppercase letter`  
    `Must have at least one lower case letter`  
@@ -231,4 +231,27 @@
         - \d matches a digit [0-9]
       * .{6,12} matches any character (except newline) between 6 and 12 times
       * $ asserts position at end of the string
-   
+      
+   `Matching URL: ^(http|https|ftp):[\/]{2}([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,4})(:[0-9]+)?\/?([a-zA-Z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~]*)`
+   - `Must start with http or https or ftp followed by ://`  
+   `Must match a valid domain name`  
+   `Could contain a port specification (http://www.localhost:8080)`  
+   `Could contain digit, letter, dots, hyphens, forward slashes, multiple times`
+      
+      Let’s explain each pattern of the above expression:
+      
+      * ^ asserts position at start of the string
+      * capturing group (http|https|ftp), captures http or https or ftp
+      * : escaped character, matches the character : literally
+      * [\/]{2} matches exactly 2 times the escaped character /
+      * capturing group ([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,4}):
+        - [a-zA-Z0-9\-\.]+ matches one and unlimited times character in the range between a and z, A and Z, 0 and 9, the character - literally and the character . literally
+        - \. matches the character . literally
+        - [a-zA-Z]{2,4} matches a single character between 2 and 4 times between a and z or A and Z (case sensitive)
+      * capturing group (:[0-9]+)?:
+        - quantifier ? matches the group between zero or more times
+        - : matches the character : literally
+        - [0-9]+ matches a single character between 0 and 9 one or more times
+      * \/? matches the character / literally zero or one time
+      * capturing group ([a-zA-Z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~]*):
+        - [a-zA-Z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~]* matches between zero and unlimited times a single character in the range a-z, A-Z, 0-9, the characters: -._?,'/\+&amp;%$#=~.

@@ -141,7 +141,7 @@
    #### RegExp.test(string)
    - Tests if the given string matches the Regexp, and returns true if matching, false if not.
      
-     const regex = '/sample/'; 
+     var regex = '/sample/';
      var match = regex.test("Sample text");
      match then contains false
      

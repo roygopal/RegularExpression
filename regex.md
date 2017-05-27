@@ -163,8 +163,8 @@
    #### String.replace(pattern,string)
    - Replaces matches with the given string, and returns the edited string.
    
-     var str = 'Liorean said: My name is Liorean!';
-     var replacedStr = str.replace(/Liorean/g,'Big Fat Dork');
+     var str = 'Liorean said: My name is Liorean!'
+     var replacedStr = str.replace(/Liorean/g,'Big Fat Dork')
      replacedStr then contains "Big Fat Dork said: My name is Big Fat Dork!"
      
    #### String.split(pattern)

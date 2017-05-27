@@ -128,3 +128,11 @@
 - `x`: Allow comments and whitespace in pattern
 - `e`: Evaluate replac­ement
 - `U`: Ungreedy mode
+
+## Example
+
+1. # RegExp.exec(string)
+  - Applies the RegExp to the given string, and returns the match information.
+  
+    var match = /s(amp)le/i.exec("Sample text")
+    match then contains ["Sample","amp"]

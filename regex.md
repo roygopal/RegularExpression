@@ -134,9 +134,9 @@
    #### RegExp.exec(string)
    - Applies the RegExp to the given string, and returns the match information.
      
-     `var regex = '/s(amp)le/i';  
-     var match = regex.exec("Sample text");  
-     match then contains ["Sample","amp"]`
+     `var regex = '/s(amp)le/i';  `
+     `var match = regex.exec("Sample text");  `
+     `match then contains ["Sample","amp"]`
      
    #### RegExp.test(string)
    - Tests if the given string matches the Regexp, and returns true if matching, false if not.

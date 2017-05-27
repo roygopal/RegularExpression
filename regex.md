@@ -173,3 +173,62 @@
      `var str1 = 'I am confused';`  
      `var str = str1.split(/\s/g);`  
      `str then contains ["I","am","confused"]`
+     
+     
+## Common Used Regex
+  
+  #### Decimal Input
+  
+   - Positive Integers `/^\d+$/`
+   - Negative Integers `/^-\d+$/`
+   - Integer `/^-?\d+$/`
+   - Positive Number `^/\d*\.?\d+$/`
+   - Negative Number  `/^-\d*\.?\d+$/`
+   - Positive Number or Negative Number `/^-?\d*\.?\d+$/`
+   - Phone number `/^\+?[\d\s]{3,}$/`
+   - Phone with code  `/^\+?[\d\s]+\(?[\d\s]{10,}$/`
+   - Year 1900-2099  `/^(19|20)\d{2}$/`
+   - Date (dd mm yyyy, d/m/yyyy, etc.) `/^([1-9]|0[1-9]|[12][0-9]|3[01])\D([1-9]|0[1-9]|1[012])\D(19[0-9][0-9]|20[0-9][0-9])$/`
+   
+  #### Alphabetic Input
+  
+   - Personal Name `/^[\w.']{2,}(\s[\w.']{2,})+$/`
+   - Username `/^[\w\d_.]{4,}$/`
+   - Password at `/^.{6,}$/` or `/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,12}$/`
+   - Password or empty input  `/^.{6,}$|^$/`
+   - email `/^[_]*([a-z0-9]+(\.|_*)?)+@([a-z][a-z0-9-]+(\.|-*\.))+[a-z]{2,6}$/` or `/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/`
+   - domain `/^([a-z][a-z0-9-]+(\.|-*\.))+[a-z]{2,6}$/`
+   - URL `/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2}) (?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i` or `/^(http|https|ftp):[\/]{2}([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,4})(:[0-9]+)?\/?([a-zA-Z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~]*)/`
+   
+  #### Other
+  
+   - Match no input `/^$/` 
+   - Match blank input `/^\s\t*$/`
+   - Match New line `/[\r\n]|$/`
+   - Match white Space `/^\s+$/`
+   - Match HTML Tags `/<([\w]+).*>(.*?)<\/\1>/`
+   
+   #### Explanation of some of the above regex:
+   
+   Matching a password: `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,12}$`
+   - `6 to 12 characters in length`  
+   `Must have at least one uppercase letter`  
+   `Must have at least one lower case letter`  
+   `Must have at least one digit`  
+   `Should contain other characters`
+      
+      Let’s explain each pattern of the above expression:
+      
+      * ^ asserts position at start of the string
+      * (?=.*[a-z]) positive lookahead, asserts that the regex .*[a-z] can be matched:
+        - .* matches any character (except newline) between zero and unlimited times
+        - [a-z] matches a single character in the range between a and z (case sensitive)
+      * (?=.*[A-Z]) positive lookahead, asserts that the regex .*[A-Z] can be matched:
+        - .* matches any character (except newline) between zero and unlimited times
+        - [A-Z] matches a single character between A and Z (case sensitive)
+      * (?=.*\d) positive lookahead, asserts that the regex *\dcan be matched:
+        - .* matches any character (except newline) between zero and unlimited times
+        - \d matches a digit [0-9]
+      * .{6,12} matches any character (except newline) between 6 and 12 times
+      * $ asserts position at end of the string
+   

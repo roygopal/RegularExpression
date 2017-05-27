@@ -141,35 +141,35 @@
    #### RegExp.test(string)
    - Tests if the given string matches the Regexp, and returns true if matching, false if not.
      
-     `var regex = '/sample/';  
-     var match = regex.test("Sample text");  
-     match then contains false`
+     `var regex = '/sample/';`  
+     `var match = regex.test("Sample text");`  
+     `match then contains false`
      
    #### String.match(pattern)
    - Matches given string with the RegExp. With g flag returns an array containing the matches, without g flag returns just the
      first match or if no match is found returns null.
    
-     `var str1 = 'Watch out for the rock!';  
-     var str = str1.match(/r?or?/g);  
-     str then contains ["o","or","ro"]`  
+     `var str1 = 'Watch out for the rock!';`  
+     `var str = str1.match(/r?or?/g);`  
+     `str then contains ["o","or","ro"]`  
      
    #### String.search(pattern)
    - Matches RegExp with string and returns the index of the beginning of the match if found, -1 if not.
      
-     `var str = 'Watch out for the rock!';   
-     var index = str.search(/for/);  
-     index then contains 10`
+     `var str = 'Watch out for the rock!';`   
+     `var index = str.search(/for/);`  
+     `index then contains 10`
      
    #### String.replace(pattern,string)
    - Replaces matches with the given string, and returns the edited string.
    
-     `var str = 'Liorean said: My name is Liorean!';  
-     var replacedStr = str.replace(/Liorean/g,'Big Fat Dork');  
-     replacedStr then contains "Big Fat Dork said: My name is Big Fat Dork!"`
+     `var str = 'Liorean said: My name is Liorean!';`  
+     `var replacedStr = str.replace(/Liorean/g,'Big Fat Dork');`  
+     `replacedStr then contains "Big Fat Dork said: My name is Big Fat Dork!"`
      
    #### String.split(pattern)
    - Cuts a string into an array, making cuts at matches.
      
-     `var str1 = 'I am confused';  
-     var str = str1.split(/\s/g);  
-     str then contains ["I","am","confused"]`
+     `var str1 = 'I am confused';`  
+     `var str = str1.split(/\s/g);`  
+     `str then contains ["I","am","confused"]`

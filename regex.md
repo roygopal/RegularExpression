@@ -171,5 +171,7 @@
    - Cuts a string into an array, making cuts at matches.
      
      var str1 = 'I am confused';
+     
      var str = str1.split(/\s/g);
+     
      str then contains ["I","am","confused"]
